@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href = "./css/style.css">
+    </head>
+    
+    <title>Welcome! | Electronic Health Chain</title>
+    <header>
+        <div class = "img_container">
+            <img class = "logo" src = "images/logo.png" alt = "logo goes here"></img>
+        </div>
+
+        <div class = "container">
+            <h2 id = "site_title"><span class = "highlight">Electronic</span> Health Chain</h2>
+            
+            <ul>
+                <div class="right-menu">
+                    <li class = "highlight">Account</li>
+                    <div class = "dropdown-menu" id = "account_drop">
+                        <a id = "login_button" onclick = "display_login()">Login</a>
+                        <br>
+                        <a id = "register_button">Register</a>
+                        <br>
+                        <a id = "logout_button">Logout</a>
+                    </div>
+                </div>
+                <li id = "home_button" onclick = "display_home()">Home</li>
+                <li id = "records_button" onclick = "display_records()">Records</li>
+                <li id = "about_button" onclick = "display_about_us()">About Us</li>
+            </ul>        
+        </div>
+    </header>
+
+    <body>
+
+    </body>
+
+    <section>
+        <div class = "nav_section" id = "login">
+            <h2>Login</h2>
+            <img class = "img_container" src="images/default_user.png" alt="default user image">
+            <form>
+                <label for = "username">Username <br>
+                    <input id = "username" type = "text" placeholder = "Enter Username">
+                </label>
+                
+                <br>
+                
+                <label for = "password">Password <br>
+                    <input id = "password" type = "password"  placeholder = "Enter Password">
+                </label>
+                
+                <br>
+            
+                <label for = "blockchain_file">Blockchain File <br>
+                    <input id = "blockchain_file" type = "file"  placeholder = "Choose File">
+                </label>                
+            </form>
+        </div>
+
+        <div class = "nav_section" id = home>
+            <p>Home Section</p>
+        </div>
+
+        <div class = "nav_section" id = records>
+            <p>Records Section</p>
+        </div>
+
+        <div class = "nav_section" id = "about_us">
+            <p>About Us Section</p>
+        </div>
+    </section>
+
+    <footer>
+
+        <script src = "./js/main.js"> 
+        </script>
+    </footer>
+</html>
