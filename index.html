@@ -19,7 +19,7 @@
                     <div class = "dropdown-menu" id = "account_drop">
                         <a id = "login_button" onclick = "display_login()">Login</a>
                         <br>
-                        <a id = "register_button">Register</a>
+                        <a id = "register_button" onclick = "display_register()">Register</a>
                         <br>
                         <a id = "logout_button">Logout</a>
                     </div>
@@ -35,7 +35,7 @@
 
     </body>
 
-    <section>
+    <section class = "nav_options_container">
         <div class = "nav_section" id = "login">
             <h2>Login</h2>
             <img class = "img_container" src="images/default_user.png" alt="default user image">
@@ -54,12 +54,48 @@
             
                 <label for = "blockchain_file">Blockchain File <br>
                     <input id = "blockchain_file" type = "file"  placeholder = "Choose File">
-                </label>                
+                </label>     
+                
+                <input type = "button" value = "Login" id = "login_submit">
+            </form>
+            <div id="login_status_container">
+                <h4 id = "login_status"></h4>
+            </div>
+        </div>
+
+        <div class = "nav_section" id = "register">
+            <h2>Register</h2>
+            <form method = "POST">
+                <label>Username <br>
+                    <input id = "register_username" type = "text" placeholder = "Enter Username">
+                </label>
+
+                <label><br> Password <br>
+                    <input id = "register_password" type = "password" placeholder = "Enter Password">
+                </label>
+                
+                <label><br> Password 2 <br>
+                    <input id = "register_password2" type = "password" placeholder = "Enter Password Again">
+                </label>
+
+                <label><br> Email <br>
+                    <input id = "register_email" type = "email" placeholder = "Enter Email">
+                </label>
+                
+                <label><br> Verification Documents <br>
+                    <input id = "register_doc" type = "file" accept = "pdf">
+                </label>
+
+                <label><br> User Image <br>
+                    <input id = "register_user_image" type = "file" accept = "image/*">
+                </label>
+
+                <input type = "submit" value = "Register">
             </form>
         </div>
 
-        <div class = "nav_section" id = home>
-            <p>Home Section</p>
+        <div class = "nav_section" id = "home">
+            <img id = "welcome_image" src = "images/welcome4.png">
         </div>
 
         <div class = "nav_section" id = records>
@@ -72,8 +108,8 @@
     </section>
 
     <footer>
-
-        <script src = "./js/main.js"> 
-        </script>
+        <script type = "text/javascript" src = "./js/switch_nav_options.js"></script>
+        <script type = "text/javascript" src = "./js/login_request.js"></script>
+        <script type = "text/javascript" src = "./js/logout.js"></script>
     </footer>
 </html>

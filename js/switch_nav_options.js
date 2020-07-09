@@ -3,7 +3,11 @@ var selected;
 //Must load the last window that was previously loaded
 load_this = localStorage.getItem("index_last_nav_viewed");
 selected = document.getElementById(load_this);
-selected.style.visibility = "visible";
+
+if(selected != null)
+{
+    selected.style.visibility = "visible";
+}
 
 function display_login()
 {
@@ -74,3 +78,5 @@ function display_records()
 
     localStorage.setItem("index_last_nav_viewed", "records")
 }
+
+

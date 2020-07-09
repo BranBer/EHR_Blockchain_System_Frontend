@@ -5,14 +5,20 @@
     width: 100%;
 }
 
+.nav_options_container{
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
 .nav_section
 {
     margin: auto;
     width: 65%;
     visibility: hidden;
     background-color: #494754;
-
-    position: fixed;
+    
+    position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -146,11 +152,15 @@ body{
     z-index: 0;
 }
 
+section
+
 /* Nav Options*/
+
+/* Login Section */
 #login
 {
     margin: auto;
-    height: 600px;
+    height: 700px;
     width: 320px;
 
     background-color: #494754;
@@ -160,6 +170,8 @@ body{
     text-align: center;
 
     box-shadow: 10px 10px  #00ffa9;
+
+    margin: 50px 0px 50px 0px;
 }
 
 #login img{
@@ -178,6 +190,9 @@ body{
 
 #login form input{
     margin: 20px 0 30px 0;
+    border-color: #00ffa9;
+    border-style: solid;
+    border-width: 2px;
 }
 
 #login input::placeholder{
@@ -186,6 +201,86 @@ body{
 
 #login form input[type=file]{
     margin-left: 22%;
+    border: none;
 }
 
+form input[type=button]{
+    position:relative;
+    bottom: 20px;
+    padding: 5px 30px 5px 30px;
+    background-color: #00ffa9;
+    font-family: 'Lucida Console';
+    font-size: 18px;
+    color: #000000;
+}
 
+form input[type=button]:hover{
+    background-color: #f6cff2;
+    border-color: #f6cff2;
+    color: #ffffff;
+
+    padding: 7px 32px 7px 32px;
+
+}
+
+form input[type=button]:active{
+    padding: 3px 28px 3px 28px;
+}
+
+#login_status_container
+{
+    position:relative;
+    top: -30px;
+}
+/*Home Section*/
+
+#home{
+    background: none;
+}
+
+#home img{
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Registration Section */
+
+#register{
+    margin: auto;
+    height: 700px;
+    width: 320px;
+
+    background-color: #494754;
+    font-family: 'Lucida Console';
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+
+    box-shadow: 10px 10px  #00ffa9;
+    margin: 50px 0px 50px 0px;
+}
+
+#register label{
+    font-family: 'Lucida Console';
+    font-size: 18px;
+    color: #ffffff;
+    align-items: center;
+}
+
+#register input{
+    margin: 20px 0 30px 0;
+    border-bottom-color: #00ffa9;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+#register form input[type=file]{
+    margin-left: 22%;
+    border: none;
+}
+
+#register form input::placeholder{
+    text-align: center;
+}
