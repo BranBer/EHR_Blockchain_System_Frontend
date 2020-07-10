@@ -12,6 +12,7 @@ function login()
     let password = document.getElementById('password').value;
 
     let loginStatus = document.getElementById('login_status');
+    loginStatus.innerText = "";
 
     let body = {
         'username': username,
@@ -29,7 +30,19 @@ function login()
             loginStatus.style.color = '#00ffa9';
 
             localStorage.setItem('Token', this.responseText);
-            console.log(localStorage.getItem('Token'))
+            localStorage.setItem('Username', username);
+            console.log(localStorage.getItem('Token') + "\n" + localStorage.getItem('Username'));
+
+            //Change the Account List Index Text to the Username
+            accountLabel = document.getElementById("account_label");
+            accountLabel.innerText = username;
+
+            //Disable the Login Button
+            loginButton = document.getElementById("login_button");
+            loginButton.style.display = "none";
+
+            //Go to Home
+            display_home();
         }
         else if(this.readyState == 4 && this.status == 400)
         {

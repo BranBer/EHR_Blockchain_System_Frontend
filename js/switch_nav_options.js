@@ -4,6 +4,34 @@ var selected;
 load_this = localStorage.getItem("index_last_nav_viewed");
 selected = document.getElementById(load_this);
 
+//Check if token is saved, if token exists, set account label to username
+token = localStorage.getItem("Token");
+username = localStorage.getItem("Username");
+
+if(token != "null" && username != "null"){
+    //Change the Account List Index Text to the Username
+    accountLabel = document.getElementById("account_label");
+    accountLabel.innerText = username;
+    
+    //Disable the Login Button
+    loginButton = document.getElementById("login_button");
+    loginButton.style.display = "none";
+
+    //Go to home page
+    display_home();
+} else {
+    //Enable the Login Button
+    loginButton = document.getElementById("login_button");
+    loginButton.style.display = "block";
+
+    //Wipe Username Label
+    accountLabel = document.getElementById("account_label");
+    accountLabel.innerText = "Account";
+
+    display_login();
+}
+
+
 if(selected != null)
 {
     selected.style.visibility = "visible";

@@ -190,9 +190,9 @@ section
 
 #login form input{
     margin: 20px 0 30px 0;
-    border-color: #00ffa9;
-    border-style: solid;
-    border-width: 2px;
+    border-bottom-color: #00ffa9;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
 }
 
 #login input::placeholder{
