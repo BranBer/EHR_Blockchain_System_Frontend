@@ -19,12 +19,14 @@ function display_register_authcode()
     body = {};
     register_complete = true;
     entry_count = 0;
+    password2 = '';
+
+    status = '';
 
     entries = document.getElementsByClassName("register_input");
 
     for(var i in entries)
     {
-        console.log(entries[i].value)
         if(entries[i].id == "register_username")
         {
             body['username'] = entries[i].value;
@@ -60,8 +62,8 @@ function display_register_authcode()
 
         if(entries[i].id == "register_password2")
         {
-            body['password2'] = entries[i].value;
-            if(body['password2'] == "")
+            password2 = entries[i].value;
+            if(password2 == "")
             {
                 //enable password2 required message
                 register_complete = false;
@@ -113,8 +115,21 @@ function display_register_authcode()
         }
     }
 
+    //Check if password and password2 match
+    if(body['password'] != password2)
+    {
+        register_complete = false;
+        status = 'Passwords do not match...';
+    }
+    else
+    {
+        status = 'Registration Incomplete...';
+    }
+
     if(register_complete == true)
     {
+        send_auth_code();
+
         if(selected != null)
         {
             selected.style.visibility = "hidden";
@@ -130,37 +145,74 @@ function display_register_authcode()
     {
         //enable registration incomplete message
         console.log("Registration Incomplete...");
+
+        //display registration incomplete message
+        status_msg = document.getElementById("register_status");
+        status_msg.style.display = "block";
+        status_msg.innerText = status;
     } 
 }
 
-function register_account()
+function send_auth_code()
 {
     //Check Auth Code
     let verify_auth_url = 'https://cors-anywhere.herokuapp.com/https://www.electronichealthchain.net/authregister/';
-    let register_url = 'https://cors-anywhere.herokuapp.com/https://www.electronichealthchain.net/register/';
-
+    console.log("im here");
     let xhr_ver = new XMLHttpRequest();
+
     xhr_ver.open('POST', verify_auth_url, true);
+    xhr_ver.setRequestHeader('Content-Type', 'application/json');
+    xhr_ver.setRequestHeader('Allow', 'POST, OPTIONS');
 
     xhr_ver.onreadystatechange = function(){
         if(this.readyState == 4 && status == 200)
         {
-            //If this is successful, send a request to the url that creates the account
-            let xhr_reg = new XMLHttpRequest();
-            xhr_reg.open('POST', register_url, true);
-            console.log("Code Verified Account!");
-
-
-            xhr_reg.onreadystatechange = function()
-            {
-                if(this.readyState == 4 && status == 200)
-                {
-                    console.log("Created Account!")
-                }
-            }
-            xhr_reg.send(body)
+            console.log("Code sent to " + body['email']);
         }
     }
 
-    xhr_ver.send()
+    xhr_ver.send(
+        JSON.stringify(
+        {
+            'email': body['email']
+        })
+    );
+}
+
+function register_account()
+{
+    console.log("Registering account...");
+    authcode = document.getElementById('register_code').value;
+    body['authcode'] = authcode;
+
+    s = undefined;
+
+    console.log(body['authcode']);    
+
+    if(authcode != '')
+    {
+        let url = 'https://cors-anywhere.herokuapp.com/https://www.electronichealthchain.net/register/';
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Allow', 'POST, OPTIONS');
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200)
+            {
+                console.log(this.responseText);
+
+                s = this.status;
+            }
+        }
+
+        xhr.send(JSON.stringify(body));
+
+        //display_login();
+    }
+    else
+    {
+        console.log("Must enter an auth code...");
+    }
 }
