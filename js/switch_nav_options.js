@@ -28,7 +28,10 @@ if(token != "null" && username != "null"){
     accountLabel = document.getElementById("account_label");
     accountLabel.innerText = "Account";
 
-    display_login();
+    if(localStorage.getItem("index_last_nav_viewed") == "login")
+    {
+        display_login();
+    }
 }
 
 
@@ -77,20 +80,6 @@ function display_about_us()
     console.log("enabled about_us window");
 
     localStorage.setItem("index_last_nav_viewed", "about_us")
-}
-
-function display_register()
-{
-    if(selected != null)
-    {
-        selected.style.visibility = "hidden";
-        console.log("disabled previous window");
-    }
-    selected = document.getElementById("register");
-    selected.style.visibility = "visible";
-    console.log("enabled register window");
-
-    localStorage.setItem("index_last_nav_viewed", "register")
 }
 
 function display_records()
