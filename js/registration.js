@@ -202,14 +202,14 @@ function register_account()
             if(this.readyState == 4 && this.status == 200)
             {
                 console.log(this.responseText);
-
                 s = this.status;
+
+                //Enable the login page
+                display_login();
             }
         }
 
         xhr.send(JSON.stringify(body));
-
-        //display_login();
     }
     else
     {

@@ -106,6 +106,7 @@
             <h4 id = "register_status">Registration Incomplete...</h4>
         </div>
 
+        <!-- Registration Authcode Section -->
         <div class = "nav_section" id="register_authcode">
             <form method = "POST">
                 <label>
@@ -121,9 +122,48 @@
             <img id = "welcome_image" src = "images/welcome4.png">
         </div>
 
+        <!-- Records Section -->
         <div class = "nav_section" id = records>
-            <p>Records Section</p>
+
+            <div id="rn_con">
+                <ul id="records_nav">
+                    <li>
+                        <li class = "patient"><button class = "patient_select">Patient 1</button></li>
+                        
+                    </li>
+                </ul>
+            </div>
+            
+            <ul id="patient_info">
+                <li><button>Patient</button></li>
+                <li><button>Demographics</button></li>
+                <li><button>Emergency Contacts</button></li>
+                <li><button>Medications</button></li>
+                <li><button>Allergies</button></li>
+                <li><button>Immunizations</button></li>
+                <li><button>Medical Visits</button> </li>
+                <li><button>Surgical History</button></li>
+                <li><button>Transfusion History</button></li>
+                <li><button>Present Illness History</button></li>
+                <li><button>Family History</button></li>
+                <li><button>History of Illnesses</button></li>
+                <li><button>Disabilities</button></li>
+                <li><button>Vitals</button></li>
+                <li><button>Heart</button></li>
+                <li><button>Examinations</button></li>
+            </ul>
+
+            <div id = "records_filter">
+                <input type="date"> 
+                <button id = "filter_records_date">Filter</button>
+                <div id = "records_container">
+
+                </div>
+            </div>
+
+            
         </div>
+
 
         <div class = "nav_section" id = "about_us">
             <p>About Us Section</p>
@@ -135,5 +175,6 @@
         <script type = "text/javascript" src = "./js/login_request.js"></script>
         <script type = "text/javascript" src = "./js/logout.js"></script>
         <script type = "text/javascript" src = "./js/registration.js"></script>
+        <script type = "text/javascript" src = "./js/records.js"></script>
     </footer>
 </html>

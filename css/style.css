@@ -359,3 +359,111 @@ sub
 #register_authcode form input::placeholder{
     text-align: center;
 }
+
+/* Records Navigation */
+#records
+{
+    /*background-color: white;*/
+    width: 1000px;
+}
+#records_nav{
+    position:relative;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#patient_info
+{
+    position: relative;
+    margin: 0;
+    left: 0px;
+    list-style: none;
+    display: inline-block;
+}
+
+#rn_con{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#rn_con button{
+    height: 40px;
+    width: 160px;
+    border: none;
+    outline: none;
+
+    display: inline-block;
+    background-color: #00ffa9;
+    border-right-color: white;
+    border-right-style: solid;
+    border-right-width: 3px;
+}
+
+/*
+#rn_con button:focus{
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    background-color: #f6cff2;
+}*/
+
+#patient_info button{
+    height: 40px;
+    width: 160px;
+    border: none;
+    outline: none;
+
+    display: inline-block;
+    background-color: #00ffa9;
+    border-left-color: white;
+    border-left-style: solid;
+    border-left-width: 3px;
+
+}
+
+.patient_select{
+    height: 40px;
+    width: 160px;
+    border: none;
+    outline: none;
+    background-color: #00ffa9;
+    border-left-color: white;
+    border-left-style: solid;
+    border-left-width: 3px;
+
+}
+
+#records button:hover{
+    background-color: #f6cff2;
+}
+
+
+#patient_info button:focus{
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    background-color: #f6cff2;
+}
+
+#records_filter
+{
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+
+
+
+#records_container
+{
+    height:600px;
+    width: 550px;
+    overflow: scroll;
+    display: block;   
+    margin: 10px 20px 10px 0px;
+    background-color: white;
+}
+
+
+

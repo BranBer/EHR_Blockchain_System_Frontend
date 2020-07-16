@@ -82,18 +82,5 @@ function display_about_us()
     localStorage.setItem("index_last_nav_viewed", "about_us")
 }
 
-function display_records()
-{
-    if(selected != null)
-    {
-        selected.style.visibility = "hidden";
-        console.log("disabled previous window");
-    }
-    selected = document.getElementById("records");
-    selected.style.visibility = "visible";
-    console.log("enabled records window");
-
-    localStorage.setItem("index_last_nav_viewed", "records")
-}
 
 
